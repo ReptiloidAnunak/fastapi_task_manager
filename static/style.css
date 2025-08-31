@@ -1,0 +1,123 @@
+
+
+html, body {
+    background-color: rgb(12, 91, 194); 
+    color: azure;
+}
+
+body {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+}
+
+
+#page-title {
+    margin-top: 50px;
+}
+
+
+#tasks-table-main-wrapper {
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+}
+
+#tasks-table-main {
+    color: rgb(5, 0, 0);
+    width: 100%;
+}
+
+#tasks-table-main th {
+    padding: 10px;
+    border-style: ridge;
+}
+
+#create-task-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.col-head-cell {
+    background-color: rgba(62, 160, 226, 0.541);
+    color: aliceblue;
+}
+
+.create-task-input {
+}
+
+#task-create-wrapper {
+    margin: 50px;
+    padding: 50px;
+    align-items: center;
+    justify-items: center;
+    border-style: ridge;
+
+    background-color: antiquewhite;
+    color: black;
+
+    width: 20%;
+    border-radius: 20px;
+}
+
+#create-task-form {
+    gap: 20px;
+}
+
+#created-opt {
+    background-color: rgb(3, 75, 143);
+}
+
+
+textarea {
+    display: flex;
+    width: 80%;
+}
+
+td {
+    border-style: ridge;
+}
+
+.task-cell {
+    background-color: aliceblue;
+}
+
+.icon-td {
+    text-align: center;
+    width: 15px;
+    border-radius: 7px;
+}
+
+.icon-td:hover {
+    background-color: aquamarine;
+}
+
+.icon {
+    width: 20px;
+}
+
+
+#description-input {
+    width: 400px;
+    min-width: 200px;
+}
+
+#update-task-form {
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+    padding: 50px;
+    align-items: center;
+    justify-items: center;
+    padding: 10px;
+    gap: 10px;
+
+}
+
+
+.create-task-btn:hover {
+    background-color: greenyellow;
+    color: beige;
+}

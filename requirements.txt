@@ -1,0 +1,7 @@
+fastapi[standard]
+python-dotenv
+sqlalchemy==2.0.43
+psycopg2-binary==2.9.10
+pytest
+httpx>=0.24.0
+pytest-asyncio>=0.21.0

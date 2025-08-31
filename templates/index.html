@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task Manager Fastapi</title>
+         
+        <link rel="stylesheet" href="/static/style.css">
+    </head>
+
+    <body>
+    
+        <div id="page-title">
+            <h1>Fastapi Tasks Manager</h1>
+        </div>
+
+        <div id="tasks-table-main-wrapper">
+            <div style="justify-items: center;">
+                <h2>Tasks table</h2>
+            </div>
+
+            <div id="tasks-table-wrapper">
+                <table id="tasks-table-main">
+                    <tr>
+                        <th class='col-head-cell'>
+                            ID
+                        </th>
+
+                        <th class='col-head-cell'>
+                            Title
+                        </th>
+
+                        <th class='col-head-cell'>
+                            Description
+                        </th>
+
+                        <th class='col-head-cell'>
+                            Status
+                        </th>
+                    </tr>
+                    {% for task in tasks %}
+                        <tr>
+                            <td class="task-cell">
+                                {{ task.id }}
+                            </td>
+
+                            <td class="task-cell">
+                                {{ task.title }}
+                            </td>
+
+                            <td class="task-cell">
+                                {{ task.description }}
+                            </td>
+
+                            <td class="task-cell">
+                                {{ task.status }}
+                            </td>
+
+                            <td class="icon-td">
+                                <a href="/get-task/{{ task.id }}">
+                                    <img src="/static/images/icons/pen.png" alt="Edit" class="icon">
+                                </a>
+                            </td>
+
+                            <td class="icon-td">
+                                <a href="/delete-task/{{ task.id }}">
+                                    <img src="/static/images/icons/delete.png" alt="Delete" class="icon">
+                                </a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>        
+            </div>
+
+        </div>
+        
+        <div id="task-create-wrapper">
+            
+            <h3>New task</h3>
+            
+            <form action="/create-task" method="post" id="create-task-form">
+                <div class="create-task-input">
+                    <label for="title">Title</label>
+                    <input type="text" name="title" required minlength="5">
+                </div>
+                
+                <div>
+                    <label for="description-input">Description</label>
+                    <textarea id="description-input" name="description" rows="4" required minlength="5"></textarea>
+                </div>                
+                
+                <div class="create-task-input">
+                    <label for="status">Status</label>
+                    <select type="" name="status">
+                        <option value="created" id="created-opt">Created</option>
+                        <option value="processing" id="processing-opt">Processing</option>
+                        <option value="completed" id="completed-opt">Сompleted</option>
+                    </select>
+                </div>
+
+                <button type="submit" class='create-task-btn'>Create</button>
+            </form>
+        </div>
+    
+    </body>
+</html>

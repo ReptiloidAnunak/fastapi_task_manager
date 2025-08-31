@@ -13,10 +13,9 @@ A FastAPI task management application with comprehensive pytest testing.
 
 ## 🛠 Tech Stack
 
-- ✅ **FastAPI** (3 points) - Modern web framework
-- ✅ **pytest** (2 points) - Comprehensive test coverage
-- ✅ **Postgres** - Data base
-- ✅ **PEP8 Compliance** - Clean code standards
+- ✅ **FastAPI**
+- ✅ **pytest**
+- ✅ **Postgres**
 - ✅ **Docker** - Full containerization
 
 ## 🚀 Quick Start

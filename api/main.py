@@ -29,7 +29,7 @@ def index(request: Request, db: Session = Depends(get_db)):
 
 
 @app.get("/get-task/{task_id}")
-def get_edit_task(task_id: int, request: Request, db: Session = Depends(get_db)):
+def get_edit_task(task_id: str, request: Request, db: Session = Depends(get_db)):
     task = db.query(Task).filter(Task.id == task_id).first()
     if task:
         return templates.TemplateResponse(request, "task.html", {"task": task})
@@ -38,7 +38,7 @@ def get_edit_task(task_id: int, request: Request, db: Session = Depends(get_db))
 
 @app.post("/update-task/{task_id}")
 def update_task(
-    task_id: int,
+    task_id: str,
     title: str = Form(...),
     description: str = Form(...),
     status: str = Form(...),
@@ -123,7 +123,7 @@ def create_task(
 
 
 @app.get("/delete-task/{task_id}")
-def delete_task(task_id: int, db: Session = Depends(get_db)):
+def delete_task(task_id: str, db: Session = Depends(get_db)):
     task = db.query(Task).filter(Task.id == task_id).first()
     if task:
         db.delete(task)
